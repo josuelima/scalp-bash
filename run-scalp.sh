@@ -2,7 +2,10 @@
 START=`date +%d/%b/%Y:%H:00:00`
 FINISH=`date +%d/%b/%Y:%H:59:59`
 
-# Set the apachje log folder
+# Set the folder according to your environment
 APACHE_LOG=
+OUTPUT_FOLDER=
+FILTER=
 
-python scalp.py -l $APACHE_LOG -f ./filter.xml -p "$START;$FINISH" -o ./logs --text
+python /data/scalp-bash/scalp.py -l $APACHE_LOG -f $FILTER -p "$START;$FINISH" -o $OUTPUT_FOLDER --text
+
